@@ -1,9 +1,10 @@
 import logoDark from "@/features/home/assets/logo-dark.svg"
 import logoLight from "@/features/home/assets/logo-light.svg"
+import { ThemeSelector } from "@/shared/components/header/theme-selector"
 
 export function HomePage() {
   return (
-    <main className="flex items-center justify-center pt-16 pb-4">
+    <main className="flex items-center justify-center pt-16 pb-4 h-screen">
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
         <header className="flex flex-col items-center gap-9">
           <div className="w-125 max-w-[100vw] p-4">
@@ -18,6 +19,7 @@ export function HomePage() {
               className="hidden w-full dark:block"
             />
           </div>
+          <ThemeSelector />
         </header>
         <div className="max-w-75 w-full space-y-6 px-4">
           <nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
