@@ -1,87 +1,123 @@
-# Welcome to React Router!
+# RR7 Biome Starter
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A minimal React Router 7 starter with essential tooling preconfigured for a clean development workflow.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Stack
 
-## Features
+- React Router v7
+- TypeScript + Vite
+- Biome
+- EditorConfig
+- Commitlint + Lefthook
+- shadcn/ui + setup theme
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## Setup
 
-## Getting Started
+### 1. Init React Router
 
-### Installation
+This project is built with React Router 7 and Vite using the app folder structure.
 
-Install the dependencies:
+### 2. Biome
 
-```bash
-npm install
-```
+Linting, formatting, and quality checks are handled by Biome:
 
-### Development
+- `biome.json`
 
-Start the development server with HMR:
+Biome provides a fast, unified toolchain for linting and formatting across the repo.
 
-```bash
-npm run dev
-```
+### 3. EditorConfig
 
-Your application will be available at `http://localhost:5173`.
+Editor-level formatting rules are defined in `.editorconfig`.
 
-## Building for Production
+Ensures consistent indentation, line endings, and encoding across editors.
 
-Create a production build:
+### 4. Commitlint + Lefthook
 
-```bash
-npm run build
-```
+Commit messages follow Conventional Commits.
 
-## Deployment
+- `commitlint.config.mjs`
+- `lefthook.yml`
 
-### Docker Deployment
+Git hooks run checks before committing.
 
-To build and run using Docker:
+Example:
 
 ```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+feat: add home route
+fix: update theme selector
+chore: upgrade dependencies
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+### 5. shadcn/ui + theme switching
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+UI components are built with `shadcn/ui`, and theme switching is handled by a custom provider.
 
-### DIY Deployment
+- `app/shared/components/providers/theme-provider.tsx`
+- `app/shared/components/header/theme-selector.tsx`
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+## Project Structure
 
-Make sure to deploy the output of `npm run build`
-
-```
+```text
+.
+├── app/
+│   ├── app.css
+│   ├── root.tsx
+│   ├── routes.ts
+│   ├── features/home/
+│   │   ├── assets/
+│   │   └── components/home.tsx
+│   └── shared/
+│       ├── components/header/theme-selector.tsx
+│       ├── components/providers/theme-provider.tsx
+│       └── ui/
+├── public/
+├── biome.json
+├── commitlint.config.mjs
+├── lefthook.yml
+├── .editorconfig
 ├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+├── tsconfig.json
+├── vite.config.ts
+└── Dockerfile
 ```
 
-## Styling
+## 🚀 Quick Start
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+You can start your project using one of the following "flavors" (branches):
+
+- `main`: Minimal setup (Standard).
+- `feat/i18n`: Main + Multi-language configuration.
+
+Pick one of the following options to get started:
+
+### Option 1 — Use this template ⭐ (Recommended)
+
+Click **"Use this template"** on GitHub to create a new repo on your account — no commit history included.
+
+### Option 2 — Clone by branch
+
+```bash
+# Clone the default branch
+git clone https://github.com/phucvu1601-tech/rr7-biome-starter.git
+
+# Or clone a specific branch
+git clone -b <branch-name> https://github.com/phucvu1601-tech/rr7-biome-starter.git
+```
+
+### Option 3 — Download ZIP by branch
+
+Go to the repo on GitHub → select a branch → click **Code** → **Download ZIP**.
 
 ---
 
-Built with ❤️ using React Router.
+### Then run:
+
+```bash
+# Skip this if you used Option 1
+git init
+
+npm install
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) and you're good to go. 🎉
